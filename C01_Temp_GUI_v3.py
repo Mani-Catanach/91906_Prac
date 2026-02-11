@@ -77,7 +77,7 @@ class Converter:
         # Reset label and entry box (if we had an error
         self.answer_error.config(fg="#004C99")
         self.temp_entry.config(fg="#FFFFFF")
-        
+
         # check that amount to be converted is a number above absolute zero
         try:
             to_convert = float(to_convert)
@@ -94,6 +94,7 @@ class Converter:
         if error != "":
             self.answer_error.config(text=error, fg="#9C0000")
             self.temp_entry.config(bg="#F4CCCC")
+            self.temp_entry.delete(0, END)
 
     def convert(self, min_temp, to_convert):
         """
